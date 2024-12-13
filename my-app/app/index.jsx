@@ -4,10 +4,10 @@ import { Link } from "expo-router";
 
 const RootLayout = () => {
   return (
-    <View className="flex-1 items-center justify-center text-center w-full h-screen">
-      <Text className="text-pink-600">Hello smith</Text>
+    <View className="flex-1 items-center bg-slate-900 justify-center ">
+      <Text className="text-2xl text-slate-200 ">Hello smith</Text>
       <StatusBar style="auto" />
-      <Link href="/profile" className="text-green-500">
+      <Link href="/profile" className="text-slate-400">
         Go to Profile
       </Link>
     </View>
