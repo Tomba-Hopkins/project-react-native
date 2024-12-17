@@ -2,6 +2,7 @@ import { View, StyleSheet, Text, ScrollView, Image } from "react-native";
 import { image } from "../constants";
 
 import { SafeAreaView } from 'react-native-safe-area-context'
+import CustomButton from "../components/CustomButton";
 
 const RootLayout = () => {
   return (
@@ -17,7 +18,16 @@ const RootLayout = () => {
 
             </Text>
 
+            <Image source={image.path} className="w-[136px] h-[15px] absolute -bottom-2 right-20" resizeMode="contain" />
+
           </View>
+
+
+          <Text className="text-sm font-rwregular text-gray-100 mt-7 text-center">Where creativity meets innovation:
+            embark on a journey of limitless exploration with Aora
+          </Text>
+
+          <CustomButton />
         </View>
       </ScrollView>
     </SafeAreaView>
