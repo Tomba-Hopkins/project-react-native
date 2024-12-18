@@ -2,12 +2,12 @@ import { View, StyleSheet, Text, ScrollView, Image } from "react-native";
 import { image } from "../constants";
 
 import { SafeAreaView } from 'react-native-safe-area-context'
-import CustomButton from "../components/CustomButton";
+import CustomButton from "../components/CustomButton.jsx";
 
 const RootLayout = () => {
   return (
     <SafeAreaView className="bg-primary h-full">
-      <ScrollView contentContainerStyle={{ height: '100%' }}>
+      <ScrollView contentContainerStyle={{ height: '100%', flexGrow: 1 }}>
         <View className="w-full h-full justify-center items-center px-4">
           <Image source={image.logo} resizeMode="contain" className="w-[130px] h-[84px]" />
           <Image source={image.cards} className="max-w-[380px] w-full h-[300px]" resizeMode="contain" />
@@ -27,7 +27,7 @@ const RootLayout = () => {
             embark on a journey of limitless exploration with Aora
           </Text>
 
-          <CustomButton />
+          <CustomButton title="Continue with Email" handlePress={() => { }} containerStyles="w-full mt-7" />
         </View>
       </ScrollView>
     </SafeAreaView>
