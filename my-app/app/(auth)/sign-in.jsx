@@ -1,5 +1,5 @@
 import { View, Text, ScrollView, Image } from "react-native";
-import React from "react";
+import { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 
@@ -24,6 +24,13 @@ const SignIn = () => {
             ...form,
             email: e
           })} otherStyles="mt-7" keyboardType="email-address" />
+
+
+
+          <FormField title="Password" value={form.password} handleChangeText={(e) => setForm({
+            ...form,
+            password: e
+          })} otherStyles="mt-7" keyboardType="email-address" />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -31,3 +38,5 @@ const SignIn = () => {
 };
 
 export default SignIn;
+
+
