@@ -5,6 +5,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import { image } from "../../constants";
 import FormField from "../../components/FormField";
+import CustomButton from "../../components/FormField";
+
 
 const SignIn = () => {
 
@@ -31,6 +33,8 @@ const SignIn = () => {
             ...form,
             password: e
           })} otherStyles="mt-7" keyboardType="email-address" />
+
+          <CustomButton />
         </View>
       </ScrollView>
     </SafeAreaView>
