@@ -2,10 +2,10 @@ import { View, Text, ScrollView, Image } from "react-native";
 import { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-
+import { Link } from 'expo-router'
 import { image } from "../../constants";
 import FormField from "../../components/FormField";
-import CustomButton from "../../components/FormField";
+import CustomButton from "../../components/CustomButton";
 
 
 const SignIn = () => {
@@ -15,11 +15,17 @@ const SignIn = () => {
     password: ''
   })
 
+  const [isSubmiting, setIsSubmiting] = useState(false)
+
+  const submit = () => {
+
+  }
+
 
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView>
-        <View className="w-full justify-center h-full px-4 my-6">
+        <View className="w-full justify-center min-h-[83vh] px-4 my-6">
           <Image source={image.logo} resizeMode="contain" className="w-[115px] h-[35px]" />
           <Text className="text-2xl text-white font-semibold mt-10  font-rwsemibold">Log in to Aora</Text>
           <FormField title="Email" value={form.email} handleChangeText={(e) => setForm({
@@ -34,7 +40,13 @@ const SignIn = () => {
             password: e
           })} otherStyles="mt-7" keyboardType="email-address" />
 
-          <CustomButton />
+          <CustomButton isLoading={isSubmiting} containerStyles="mt-7" title="Sign-In" handlePress={submit} />
+          <View className="justify-center pt-5 flex-row gap-2">
+            <Text className="text-lg text-gray-100 font-rwregular">
+              Don't have an account?
+            </Text>
+            <Link href="/sign-up" className="text-lg font-rwsemibold text-secondary">Sign Up</Link>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
